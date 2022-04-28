@@ -1,0 +1,72 @@
+                                              * Linux Assignment *
+
+Q1:   Create two files one is for item and second for category, 
+      join both files and store them in new file. Join both file on the basis of catid.
+Ans:  cat >item.txt
+      cat >category.txt
+      join item.txt category.txt> newfile.txt
+      cat newfile.txt
+
+Q2:   Count all the record from new generated file. Total words in file.
+Ans:  cat newfile.txt
+      wc newfile.txt
+      wc -w newfile.txt
+	
+Q3:   Write down command to print all price from the file created above.
+Ans:  cat >price.txt
+      join newfile.txt price.txt>VCC.txt
+      cat VCC.txt
+      awk '{print $4}' VCC.txt
+
+Q4:   Write down command to print all price in sorted order.
+Ans:  cat VCC.txt
+      awk '{print $4}' VCC.txt | sort -n
+
+Q5:   Print out middle price from the list of price.
+Ans:  cat VCC.txt
+      awk 'NR==3 {print NR,$0}' VCC.txt
+
+Q6:   Print out maximum price and minimum price from the list of file.
+Ans:  Maximum Price
+      awk '{print $4}' VCC.txt | sort -n | tail -1
+      Minimum Price
+      awk '{print $4}' VCC.txt | sort -n | head -1
+
+Q7:   Search item name and print the line on the terminal.
+Ans:  cat VCC.txt
+      grep -i "Pen" VCC.txt
+
+Q8:   Search item name and print those line which did not matched with the name.
+Ans:  cat VCC.txt
+      grep -v "Pen" VCC.txt
+
+Q9:   Use command to print the duplicate the lines for a item.
+Ans:  cat>item1.txt
+      uniq -D item.txt
+
+Q10:  Create file marks and students. Join them and print the following result.
+Ans:  cat > marks.txt
+      cat > students.txt
+      join marks.txt students.txt
+      join marks.txt students.tst>latest.txt
+
+Q11:  How many student attempt the exam.
+Ans:  cat>attendance.txt
+      join latest.txt attendance.txt>first.txt
+      grep -c "P" first.txt
+
+Q12:  How many absent in the exam.
+Ans:  cat first.txt
+      grep -v "P" first.txt
+
+Q13:  Maximum marks obtain by the student, and his name.
+Ans:  awk '{print $2,$3}' latest.txt | sort -n|head -1
+
+Q14:  Minimum marks obtain by the student, and his name.
+Ans:  awk '{print $2,$3}' latest.txt | sort -n | tail -1
+
+Q15:  Print the address and name of student from list.
+Ans:  cat > address.txt
+      join first.txt address.txt>nameadd.txt
+      awk '{print $3,$5}' nameadd.txt
+	
