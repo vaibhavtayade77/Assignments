@@ -1,0 +1,28 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Authorlist List</title>
+</head>
+<body>
+<table align="center">
+ <tr>
+  <th>Author id</th>
+  <th>Author Name</th>
+  <th>Author Email</th>
+ </tr>
+ <tr th:each="data:${ulist}">
+ <td th:text=${data.auid}></td>
+ <td th:text=${data.authorname}></td>
+ <td th:text=${data.email}></td>
+ 
+  <td><a th:href="@{/editauth(id=${data.auid})}">Edit</a> || <a th:href="@{/delauth(id=${data.auid})}">Delete </a></td>
+ </tr>
+ 
+ 
+</table>
+
+<li><a href="signup">Add Author Details</a></li>
+
+
+</body>
+</html>

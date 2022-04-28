@@ -1,0 +1,29 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Authorlist List</title>
+</head>
+<body>
+<table align="center">
+ <tr>
+  <th>Publisher id</th>
+  <th>Publisher Name</th>
+  <th>Publisher Email</th>
+  <th>Publisher Address</th>
+ </tr>
+ <tr th:each="data:${ulist}">
+ <td th:text=${data.pubid}></td>
+ <td th:text=${data.publishername}></td>
+ <td th:text=${data.emailid}></td>
+ <td th:text=${data.address}></td>
+ 
+   <td><a th:href="@{/editpub(id=${data.pubid})}">Edit</a> || <a th:href="@{/delpub(id=${data.pubid})}">Delete </a></td>
+
+ </tr>
+ 
+</table>
+<li><a href="signup2">Add Publisher Datails</a></li>
+
+
+</body>
+</html>

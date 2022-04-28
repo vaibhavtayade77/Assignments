@@ -1,0 +1,33 @@
+<html xmlns:th="http://thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Edit Publisher</title>
+</head>
+<body>
+
+<form action="/updatepub" th:object="${objuser}" method="post">
+	<table width="500" border="1">
+	  <tr>
+	   <td>Edit Publisher id</td>
+	   <td><input type="text" name="pubd" th:field="*{pubid}" /></td>
+	  </tr>
+	  <tr>>
+	   <td>Edit Publishername</td>
+	   <td><input type="text" name="publishername" th:field="*{publishername}" /></td>
+	  </tr>
+	    <tr>
+	   <td>Edit Emailid</td>
+	   <td><input type="text" name="emailid" th:field="*{emailid}" /></td>
+	  </tr>
+	   <tr>
+	   <td>Edit Address</td>
+	   <td><input type="text" name="address" th:field="*{address}" /></td>
+	  </tr>
+	   
+	  <tr>
+	   <td><input type="submit" value="Update"></td>
+	  </tr>
+	</table>
+</form>
+</body>
+</html>

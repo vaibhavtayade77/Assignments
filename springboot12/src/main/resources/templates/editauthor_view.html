@@ -1,0 +1,28 @@
+<html xmlns:th="http://thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Edit Author</title>
+</head>
+<body>
+
+<form action="/updateauth" th:object="${objuser}" method="post">
+	<table width="500" border="1">
+	  <tr>
+	   <td>Edit Author id</td>
+	   <td><input type="text" name="auid" th:field="*{auid}" /></td>
+	  </tr>
+	  <tr>>
+	   <td>Edit Authorname</td>
+	   <td><input type="text" name="authorname" th:field="*{authorname}" /></td>
+	  </tr>
+	    <tr>
+	   <td>Edit Email</td>
+	   <td><input type="text" name="email" th:field="*{email}" /></td>
+	  </tr>
+	  <tr>
+	   <td><input type="submit" value="Update"></td>
+	  </tr>
+	</table>
+</form>
+</body>
+</html>

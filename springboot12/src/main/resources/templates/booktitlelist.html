@@ -1,0 +1,34 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Booktitle List</title>
+</head>
+<body>
+<table align="center">
+ <tr>
+  <th>Booktitle id</th>
+  <th>Book Title</th>
+  <th>Auid1</th>
+  <th>Auid2</th>
+  <th>Auid3</th>
+  <th>Pubid</th>
+  <th>Price</th>
+ </tr>
+ <tr th:each="data:${ulist}">
+ <td th:text=${data.btid}></td>
+ <td th:text=${data.title}></td>
+ <td th:text=${data.auid1}></td>
+ <td th:text=${data.auid2}></td>
+ <td th:text=${data.auid3}></td>
+ <td th:text=${data.pubid}></td>
+ <td th:text=${data.price}></td>
+ 
+   <td><a th:href="@{/editbt(id=${data.btid})}">Edit</a> || <a th:href="@{/delbt(id=${data.btid})}">Delete </a></td>
+ </tr>
+ 
+</table>
+<li><a href="signup1">Add Booktitle Datails</a></li>
+
+
+</body>
+</html>

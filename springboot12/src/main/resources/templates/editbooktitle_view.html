@@ -1,0 +1,44 @@
+<html xmlns:th="http://thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Edit Booktitle</title>
+</head>
+<body>
+
+<form action="/updatebt" th:object="${objuser}" method="post">
+	<table width="500" border="1">
+	  <tr>
+	   <td>Edit BooktitleId</td>
+	   <td><input type="text" name="btid" th:field="*{btid}" /></td>
+	  </tr>
+	  <tr>>
+	   <td>Edit Title</td>
+	   <td><input type="text" name="title" th:field="*{title}" /></td>
+	  </tr>
+	    <tr>
+	   <td>Edit Auid1</td>
+	   <td><input type="text" name="auid1" th:field="*{auid1}" /></td>
+	  </tr>
+	   <tr>
+	   <td>Edit Auid2</td>
+	   <td><input type="text" name="auid2" th:field="*{auid2}" /></td>
+	  </tr>
+	   <tr>
+	   <td>Edit Auid3</td>
+	   <td><input type="text" name="auid3" th:field="*{auid3}" /></td>
+	  </tr>
+	   <tr>
+	   <td>Edit Pubid</td>
+	   <td><input type="text" name="pubid" th:field="*{pubid}" /></td>
+	  </tr>
+	   <tr>
+	   <td>Edit Price</td>
+	   <td><input type="text" name="price" th:field="*{price}" /></td>
+	  </tr>
+	  <tr>
+	   <td><input type="submit" value="Update"></td>
+	  </tr>
+	</table>
+</form>
+</body>
+</html>
